@@ -6,7 +6,6 @@ class Base_class {
 	int base, height;
 	int width, length;
 	double radius;
-	int depth;
 	
 	void findArea() {
 		std::cout << "findArea() in Base class" << std::endl;
@@ -46,22 +45,13 @@ class Circle : public Base_class {
 		radius = rr;
 	}
 	void findArea() {
-		std::cout << "Area of circle is " << (M_PI * radius * radius) << std::endl;
+		std::cout << "Area of circle is " << (3.14 * radius * radius) << std::endl;
 	}
 	void perimeter() {
-		std::cout << "Perimeter of cicle is " << (2.0 * M_PI * radius) << std::endl;
+		std::cout << "Perimeter of cicle is " << (2.0 * 3.14 * radius) << std::endl;
 	}
 };
 
-class DTriangle : public Triangle {
-	public:	
-	DTriangle(){
-		base = 10; height = 2; depth = 3;
-	}
-	void findArea() {
-		std::cout << "Area of 3D Triangle is " << (0.5 * base * height * depth) << std::endl;
-	}
-};
 int main() {
 	Triangle tr;
 	tr.findArea();
@@ -74,10 +64,4 @@ int main() {
 	Circle cr(10);
 	cr.findArea();
 	cr.perimeter();
-	
-	DTriangle tr3;
-	tr3.findArea();
-	tr3.perimeter();
-
-	return 0;
 }
